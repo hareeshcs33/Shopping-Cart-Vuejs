@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <navigation></navigation>
+    <sidenav></sidenav>
     <router-view />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/navigation";
+import Sidenav from "./components/sidenav";
 
 export default {
   name: "App",
   components: {
-    Navigation
+    Navigation,
+    Sidenav
   }
 };
 </script>

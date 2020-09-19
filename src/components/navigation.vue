@@ -1,6 +1,6 @@
 <template>
   <div class="navigation-block">
-    <div class="settings-block">
+    <div class="settings-block" @click="openSidenav">
       <i class="fas fa-sliders-h icon"></i>
     </div>
     <div class="search-block">
@@ -34,6 +34,16 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    openSidenav(){
+      const SIDENAV = document.querySelector(".sidenav");
+      SIDENAV.style.marginLeft = "0";
+    }
+  }
+}
+</script>
 <style>
 .navigation-block {
   background-color: #fff;
@@ -94,6 +104,7 @@
 .settings-block .icon {
   color: #a3a3a3;
   font-size: 24px;
+  cursor: pointer;
 }
 .cart-box {
   position: relative;
