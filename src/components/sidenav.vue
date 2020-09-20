@@ -1,8 +1,10 @@
 <template>
     <div class="sidenav">
-        <h3>Sidenav</h3>
+        <h1 class="title">Sidenav</h1>
         <ul>
-            <li>sidenav</li>
+            <li class="sidenav-link">filter one</li>
+            <li class="sidenav-link">filter two</li>
+            <li class="sidenav-link">filter three</li>
         </ul>
         <div class="close-icon" @click="closeSidenav">
             <i class="fas fa-times icon"></i>
@@ -25,6 +27,10 @@ export default {
 }
 </script>
 <style scoped>
+.title {
+    text-align: center;
+    margin: 10px 0 30px;
+}
 .sidenav {
     color: #000;
     background: gray;
@@ -34,13 +40,26 @@ export default {
     width: 300px;
     height: 100vh;
     transition: 2s;
-    margin: 85px -300px 0 0;
+    margin: 85px 0 0 -300px;
+    z-index: 99;
 }
 .close-icon {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 18px;
+    cursor: pointer;
+}
+.sidenav-link {
+    color: #fff;
+    background-color: rgb(128, 26, 201);
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+}
+.sidenav-link:hover {
+    background-color: rgb(54, 11, 85);
+    transition: 1s;
     cursor: pointer;
 }
 </style>

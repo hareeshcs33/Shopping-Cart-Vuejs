@@ -11,6 +11,12 @@
     </div>
     <div class="route-block">
       <div class="route-box">
+        <router-link to="/products">
+          <i class="fas fa-shopping-basket icon"></i>
+          <div class="route-name">Products</div>
+        </router-link>
+      </div>
+      <div class="route-box">
         <router-link to="/account">
           <i class="fas fa-user icon"></i>
           <div class="route-name">Account</div>

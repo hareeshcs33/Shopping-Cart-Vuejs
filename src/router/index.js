@@ -4,6 +4,7 @@ import MainWrapper from '@/components/main-wrapper'
 import Account from '@/components/account'
 import Orders from '@/components/orders'
 import Cart from '@/components/cart'
+import Products from '@/components/products'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/cart',
       name: 'Cart',
       component: Cart
+    },
+    {
+      path: '/products',
+      name: 'Products',
+      component: Products
     },
   ]
 })
