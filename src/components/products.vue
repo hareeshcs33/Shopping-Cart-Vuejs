@@ -1,55 +1,46 @@
 <template>
     <div class="products">
-        <ul>
-            <li>
-                <div class="product-box"></div>
-            </li>
-        </ul>
+        <div class="product-box"></div>
     </div>
 </template>
 <script>
 export default {
     data(){
-        return {
-            listData: [],
-        }
+        return {}
     },
-    methods: {
-        
-    },
-    computed: {
-
-    },
+    methods: {},
+    computed: {},
     mounted(){
         fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res => res.json())
         .then(data => {
             data.forEach(item => {
-                // console.log(item);
-                this.listData.push(item);
+                const productBox = document.querySelector('.product-box');
+                productBox.innerHTML  += `<div class="cards">
+                        <div>${item.userId}</div>
+                        <div>${item.id}</div>
+                        <div>${item.title}</div>
+                        <div>${item.body}</div>
+                    </div>
+                    `;
             });
         });
-        
-        console.log(this.listData);
     }
 }
-
-
-
-
-// const div = document.createElement('div');
-// const productBox = document.querySelector('.product-box');
-// div.appendChild(productBox);
-// productBox.innerHTML  = `<div>
-//         <div>${data.userId}</div>
-//         <div>${data.id}</div>
-//         <div>${data.title}</div>
-//         <div>${data.body}</div>
-//     </div>
-//     `;
 </script>
 <style scoped>
 .products {
     padding: 30px;
+}
+.product-box {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.product-box > div {
+    background-color: #fff;
+    width: 48%;
+    margin: 0 5px 20px;
+    padding: 20px;
 }
 </style>
